@@ -1,0 +1,13 @@
+version: "3.9"
+volumes:
+  mariadb_data:
+services:
+  19_04_24_carla:
+    image: mariadb
+    container_name: Mariadb-volum
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+    ports:
+      - 3310:3306
+    volumes:
+      - C:/Users/carla/Downloads/mariadb_data:/var/lib/mysql

@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  postgresql:
+    image: postgres:latest
+    restart: always
+    container_name: postgres-volum
+    hostname: myhost
+    environment:
+      POSTGRES_DB: test
+      POTGREST_USER: admin
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - C:/Users/carla/Downloads/postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5400:5432

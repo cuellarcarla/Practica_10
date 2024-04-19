@@ -1,0 +1,26 @@
+version: "3.9"
+volumes:
+  mariadb_data:
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb-volum2
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+    ports:
+      - 3311:3306
+    volumes:
+      - C:/Users/carla/Downloads/mariadb_data2:/var/lib/mysql
+  postgresql:
+    image: postgres:latest
+    restart: always
+    container_name: postgres-volum2
+    hostname: myhost
+    environment:
+      POSTGRES_DB: test
+      POTGREST_USER: admin
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - C:/Users/carla/Downloads/postgres_data2:/var/lib/postgresql/data
+    ports:
+      - 5405:5432
